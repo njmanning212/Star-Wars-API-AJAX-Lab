@@ -27,3 +27,13 @@ export async function getStarship(starshipId) {
   const starship = await response.json()
   return starship
 }
+
+export async function getPilots(pilotURLs) {
+  const pilots = []
+  for (const pilotURL of pilotURLs) {
+    const response = await fetch(pilotURL)
+    const pilot = await response.json()
+    pilots.push(pilot)
+  }
+  return pilots
+}

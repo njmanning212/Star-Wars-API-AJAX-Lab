@@ -4,6 +4,8 @@ import { Link } from "react-router-dom"
 
 import { getStarship } from "../../services/api-calls"
 
+import PilotList from "../../components/PilotList/PilotList"
+
 import "./StarshipDetails.css"
 
 
@@ -27,11 +29,16 @@ const StarshipDetails = () => {
   return ( 
     <main>
       <section>
+        <h2>Starship Details</h2>
         <div className="starship-container">
-          <h2>Starship Details</h2>
           <h3>NAME: {starship.name}</h3>
           <h3>MODEL: {starship.model}</h3>
-          <Link to="/starships" id='return'>RETURN</Link>
+          < PilotList pilotURLs={starship.pilots}/>
+          <Link to="/starships" id='return'>
+              <button>
+                <h3>RETURN</h3>
+              </button>
+          </Link>
         </div>
       </section>
     </main>
