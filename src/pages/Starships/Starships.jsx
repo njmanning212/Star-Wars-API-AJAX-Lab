@@ -3,6 +3,7 @@ import { Link } from "react-router-dom"
 
 import { getStarships } from "../../services/api-calls"
 
+import "./Starships.css"
 
 const Starships = () => {
 
@@ -17,19 +18,18 @@ const Starships = () => {
   }, [])
 
   if (!starships.length) {
-    return <h1>Loading...</h1>
+    return <h1 id='loading'>Loading...</h1>
   }
 
   return ( 
-    <main className="starhips-list">
-        <h1>Starships page</h1>
-      <div>
+    <main>
+      <div className="starships-list">
         {starships.map((starship, index) => (
-          <div key={index}>
-            <Link to={`/starships/${starship.url.match(/\d+/g)}`}>
-              <h3>{starship.name}</h3>
-            </Link>
+        <Link className="starship-link" key={index} to={`/starships/${starship.url.match(/\d+/g)}`}>
+          <div>
+              <h2>{starship.name}</h2>
             </div>
+        </Link>
         ))}
       </div>
     </main>

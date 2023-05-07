@@ -6,7 +6,7 @@ const NavBAr = () => {
       <nav>
         <Link to='/starships'>
           <div>
-            <h5>STAR WARS STARSHIPS</h5>
+            <h1>STAR WARS STARSHIPS</h1>
           </div>
         </Link>
       </nav>
